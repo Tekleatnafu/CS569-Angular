@@ -2,8 +2,9 @@
 
 ## Team members
 
-- Phong Lu (phong.lu@miu.edu)
-- Tekletsadik Yigzaw (tyigzaw@miu.edu)
+<!-- - Tekletsadik Yigzaw (tyigzaw@miu.edu) -->
+
+Tekletsadik Yigzaw (yigzawtekletsadik@gmail.com)
 
 ## Requirements
 
