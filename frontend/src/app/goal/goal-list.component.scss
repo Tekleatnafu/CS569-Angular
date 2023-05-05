@@ -1,0 +1,82 @@
+.goal-list {
+  .goal-block {
+    margin-top: 1rem;
+    .goal {
+      position: relative;
+      padding: 10px;
+      border: 1px solid #dcdcdc;
+      background-color: white;
+
+      .detail {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 25%;
+
+        .edit-button,
+        .delete-button {
+          position: absolute;
+          border-radius: 0 !important;
+          width: 100%
+        }
+
+        .edit-button {
+          top: 0;
+          right: 0;
+          bottom: 50%;
+        }
+
+        .delete-button {
+          bottom: 0;
+          right: 0;
+          top: 50%;
+        }
+      }
+
+      .progress-text {
+        font-size: 0.9em;
+      }
+
+      .progress {
+        margin-right: 25%;
+        height: 2px;
+      }
+
+      &:hover::before {
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        background: linear-gradient(45deg, #e8f74d, #ff6600d9, #00ff66, #13ff13, #ad27ad, #bd2681, #6512b9, #ff3300de, #5aabde);
+        background-size: 400%;
+        width: calc(100% + 5px);
+        height: calc(100% + 5px);
+        z-index: -1;
+        animation: glower 20s linear infinite;
+      }
+    }
+
+    .isDue {
+      background-color: #e5ae5b;
+    }
+
+    .isOverDue {
+      background-color: #ff7575;
+    }
+  }
+}
+
+@keyframes glower {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}

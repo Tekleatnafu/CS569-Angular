@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <h1>
+          <a routerLink="/">Personal Goal Tracker</a>
+        </h1>
+      </div>
+      <div class="col-2">
+        <div class="auth">
+          <div class="vertical-center">
+            <div *ngIf="state">
+              <span>{{state.fullname}}</span>&nbsp;/&nbsp;<a href="#" (click)="logout()">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

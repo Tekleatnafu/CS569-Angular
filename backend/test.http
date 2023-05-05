@@ -1,0 +1,127 @@
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "user1@tracker.com",
+  "password": "123456"
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "user1@tracker.com",
+  "password": "123456"
+}
+
+ {%
+    client.global.set("token", response.body.data);
+%}
+
+###
+GET http://localhost:3000/goals
+Content-Type: application/json
+
+###
+GET http://localhost:3000/goals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+POST http://localhost:3000/goals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "New goal",
+  "description": "New goal description",
+  "deadline": 123,
+  "steps": []
+}
+
+###
+PATCH http://localhost:3000/goals/5
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "New goal 1",
+  "description": "New goal 1 description",
+  "deadline": 456,
+  "steps": []
+}
+
+###
+PATCH http://localhost:3000/goals/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "New goal 1",
+  "description": "New goal 1 description",
+  "deadline": 456,
+  "steps": []
+}
+
+###
+DELETE http://localhost:3000/goals/5
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/goals/2
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET http://localhost:3000/goals/1/steps
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+POST http://localhost:3000/goals/1/steps
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Goal 1 New step 1",
+  "description": "Goal 1 New step 1",
+  "status": 0,
+  "deadline": 123
+}
+
+###
+PATCH http://localhost:3000/goals/1/steps/5
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Goal 1 New step 3",
+  "description": "Goal 1 New step 3",
+  "status": 1,
+  "deadline": 456
+}
+
+###
+PATCH http://localhost:3000/goals/1/steps/3
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Goal 1 New step 3",
+  "description": "Goal 1 New step 3",
+  "status": 1,
+  "deadline": 456
+}
+
+###
+DELETE http://localhost:3000/goals/1/steps/5
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+DELETE http://localhost:3000/goals/1/steps/3
+Authorization: Bearer {{token}}
+Content-Type: application/json

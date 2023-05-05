@@ -1,0 +1,32 @@
+<div class="goal-list">
+  <div class="container">
+    <div class="row mt-3 mb-3">
+      <div class="col-12">
+        <h3>Goals</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button class="btn btn-primary" (click)="onAddClick()">Add new Goal</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 goal-block" *ngFor="let goal of goals">
+        <div class="goal {{getColorClass(goal)}}">
+          <h4>{{goal.title}}</h4>
+          <div>{{goal.steps.length}} step{{goal.steps.length > 0 ? 's' : ''}}</div>
+          <div class="progress-text">Progress: {{goal.percentage}}%</div>
+          <div class="detail">
+            <button class="btn btn-warning edit-button" (click)="onEditClick(goal)">Edit</button>
+            <button class="btn btn-danger delete-button" (click)="onDeleteClick(goal)">Delete</button>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{'width': goal.percentage + '%'}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
